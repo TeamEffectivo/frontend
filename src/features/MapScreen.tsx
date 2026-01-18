@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
-import Palmo from '../Components/Palmo';
+import Palmo from '../components/Palmo';
 import { useEffect, useRef } from 'react';
-import Bush from '../Components/Bush';
-import Flower from '../Components/Flower';
+import Bush from '../components/Bush';
+import Flower from '../components/Flower';
 
 const curriculum = curriculumData as Curriculum;
 
