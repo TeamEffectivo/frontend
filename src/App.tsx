@@ -3,7 +3,6 @@ import Sidebar from './components/SideBar';
 import MapScreen from './features/MapScreen';
 import GameScreen from './features/GameScreen';
 import ShopScreen from './features/ShopScreen';
-import SignInterpreter from './components/TESTWebsocketInterpreter'
 import LettersScreen from './features/LettersScreen';
 import CalendarScreen from './features/CalendarScreen';
 
