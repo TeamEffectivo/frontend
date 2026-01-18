@@ -3,6 +3,7 @@ import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
 import Palmo from '../components/Palmo';
 import { useEffect, useRef } from 'react';
+import Bush from '../components/Bush';
 
 const curriculum = curriculumData as Curriculum;
 
@@ -63,6 +64,12 @@ export default function MapScreen() {
       className="min-h-screen pb-40 pr-24 bg-[length:100%_auto] bg-repeat-y bg-top"
       style={{ backgroundImage: "url('/background.png')" }} 
     >
+      <div className="absolute translate-x-90 translate-y-125 z-10 pointer-events-none scale-150">
+        <Bush/>
+      </div>
+      <div className="absolute translate-x-245 translate-y-200 z-10 pointer-events-none scale-150">
+        <Bush/>
+      </div>
       <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
         {curriculum.lessons.map((lesson, index) => {
 
