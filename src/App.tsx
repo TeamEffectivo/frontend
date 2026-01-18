@@ -24,7 +24,7 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<AuthPage />} />
-            <Route path="/Map" element={<MapScreen />} />
+            <Route path="/map" element={<MapScreen />} />
             <Route path="/lesson/:id" element={<GameScreen />} />
             <Route path="/shop" element={<ShopScreen />} />
             <Route path="/letters" element={<LettersScreen />} />

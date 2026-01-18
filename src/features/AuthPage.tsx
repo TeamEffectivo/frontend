@@ -56,7 +56,7 @@ export default function SignIn() {
         console.log("Logged in! JWT Token:", token);
         if (token) {
           localStorage.setItem("idToken", token);
-          navigate("/Map"); // redirect to dashboard
+          navigate("/map"); // redirect to dashboard
         }
       }
     } catch (err: unknown) {

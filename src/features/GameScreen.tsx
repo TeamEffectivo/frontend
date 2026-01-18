@@ -97,7 +97,7 @@ export default function GameScreen() {
                 setStep(s => s + 1);
             } else {
                 addCoin(50);
-                navigate('/');
+                navigate('/map');
             }
         }} 
       />
