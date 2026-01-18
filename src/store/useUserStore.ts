@@ -5,6 +5,7 @@ interface UserState {
   streak: number;
   streakFreezes: number;
   coins: number;
+  totalScore: number;
   deductBattery: () => void;
   addCoin: (amount: number) => void;
   buyItem: (type: 'freeze' | 'battery', cost: number) => void;
@@ -15,13 +16,15 @@ export const useUserStore = create<UserState>((set) => ({
   streak: 0,
   streakFreezes: 0,
   coins: 100,
+  totalScore: 100,
   
   deductBattery: () => set((state) => ({ 
     batteries: Math.max(0, state.batteries - 1) 
   })),
   
   addCoin: (amount) => set((state) => ({ 
-    coins: state.coins + amount 
+    coins: state.coins + amount, 
+    totalScore: state.totalScore + amount
   })),
 
   buyItem: (type, cost) => set((state) => {
