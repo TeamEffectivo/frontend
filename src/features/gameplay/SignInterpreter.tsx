@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { CheckCircle, XCircle, Loader2, RotateCcw, Camera, ArrowRight } from 'lucide-react';
+import { CheckCircle, XCircle, Loader2, RotateCcw, Camera } from 'lucide-react';
 
 type Status = 'idle' | 'checking' | 'success' | 'wrong';
 

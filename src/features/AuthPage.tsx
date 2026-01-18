@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { authService } from '../services/authService';
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,21 @@ export default function SignIn() {
   const [successMsg, setSuccessMsg] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkUserSession = async () => {
+      try {
+        const token = await authService.getToken();
+        if (token) {
+          navigate("/map", { replace: true });
+        }
+      } catch (err) {
+        console.log("No active session found.");
+      }
+    };
+
+    checkUserSession();
+  }, [navigate]);
 
   const handleAuth = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -3,13 +3,10 @@ import { useUserStore } from '../store/useUserStore';
 import { User, Mail, Trophy, Coins, BatteryFull, Snowflake } from 'lucide-react';
 
 const Profile = () => {
-  const { coins, batteries, streak, streakFreezes } = useUserStore();
+  const { coins, batteries, streak, streakFreezes, totalScore } = useUserStore();
   // Initialize state directly from localStorage using function initializer
   const [userEmail] = useState<string>(() => localStorage.getItem('userEmail') || '');
   const [userName] = useState<string>(() => localStorage.getItem('userName') || 'User');
-
-  // Calculate total score (coins + streak points)
-  const totalScore = coins + (streak * 10);
 
   return (
     <div className="pt-24 px-8 pb-12 max-w-4xl mx-auto">
