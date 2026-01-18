@@ -150,11 +150,11 @@ const Footer = ({ showNext, isCorrect, onNext, streak }: any) => (
     <div className="max-w-2xl mx-auto flex justify-between items-center">
       <div className="flex items-center gap-4">
         {showNext && (
-          <div className="flex-shrink-0 w-40 h-40">
+          <div className="flex-shrink-0 w-62 h-38 rounded-xl overflow-hidden">
             <img 
               src={isCorrect && streak >= 3 ? "/streak.gif" : isCorrect ? "/veryHappy.gif" : "/sad.gif"} 
               alt={isCorrect && streak >= 3 ? "Streak!" : isCorrect ? "Very happy duck" : "Sad duck"} 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
         )}
