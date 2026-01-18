@@ -4,6 +4,7 @@ import type { Curriculum } from '../types';
 import Palmo from '../components/Palmo';
 import { useEffect, useRef } from 'react';
 import Bush from '../components/Bush';
+import Flower from '../components/Flower';
 
 const curriculum = curriculumData as Curriculum;
 
@@ -64,12 +65,16 @@ export default function MapScreen() {
       className="min-h-screen pb-40 pr-24 bg-[length:100%_auto] bg-repeat-y bg-top"
       style={{ backgroundImage: "url('/background.png')" }} 
     >
-      <div className="absolute translate-x-90 translate-y-125 z-10 pointer-events-none scale-150">
-        <Bush/>
-      </div>
-      <div className="absolute translate-x-245 translate-y-200 z-10 pointer-events-none scale-150">
-        <Bush/>
-      </div>
+        <div className="absolute translate-x-30 translate-y-125 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-245 translate-y-200 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-30 translate-y-125 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-245 translate-y-800 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-105 translate-y-75 z-10 pointer-events-none scale-155"><Flower/></div>
+        <div className="absolute translate-x-335 translate-y-180 z-10 pointer-events-none scale-155"><Flower/></div>
+        <div className="absolute translate-x-25 translate-y-200 z-10 pointer-events-none scale-125"><Flower/></div>
+        <div className="absolute translate-x-395 translate-y-380 z-10 pointer-events-none scale-155"><Flower/></div>
+        <div className="absolute translate-x-25 translate-y-400 z-10 pointer-events-none scale-125"><Flower/></div>
+        <div className="absolute translate-x-95 translate-y-680 z-10 pointer-events-none scale-125"><Flower/></div>
       <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
         {curriculum.lessons.map((lesson, index) => {
 
