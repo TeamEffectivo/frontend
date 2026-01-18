@@ -1,0 +1,45 @@
+.pixel-container {
+  position: relative;
+  width: 80px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+/* Base image stays visible slightly past the 50% mark */
+.base-pixel {
+  animation: snap-switch-opposite 1s infinite steps(1);
+}
+
+/* Top image turns on slightly before the 50% mark */
+.top-pixel {
+  animation: snap-switch 1s infinite steps(1);
+}
+
+@keyframes snap-switch {
+  0%, 49% { 
+    opacity: 0; 
+  }
+  49%, 100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes snap-switch-opposite {
+  0%, 51% { 
+    opacity: 1; 
+  }
+  51%, 100% { 
+    opacity: 0; 
+  }
+}
