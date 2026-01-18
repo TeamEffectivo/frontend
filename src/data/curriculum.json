@@ -6,7 +6,7 @@
       "challenges": [
         { "id": "l1_q1", "type": "SIGN_RECOGNITION", "question": "Which sign represents the letter 'A'?", "image": "/letters/a.png", "options": ["A", "S", "M", "N"], "answer": "A" },
         { "id": "l1_q2", "type": "SIGN_RECOGNITION", "question": "Fill in the missing letter for: _ A T", "text": "_ A T", "answer": "C" },
-        { "id": "l1_q3", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'B' to the camera.", "letter": "B", "answer": "B" }
+        { "id": "l1_q3", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'O' to the camera.", "letter": "O", "answer": "O" }
       ]
     },
     {
@@ -14,7 +14,7 @@
       "name": "Family Signs",
       "challenges": [
         { "id": "l2_q1", "type": "MULTIPLE_CHOICE", "question": "This sign for 'Father' starts with which letter?", "image": "/letters/f.png", "options": ["D", "F", "M", "P"], "answer": "F" },
-        { "id": "l2_q2", "type": "SIGN_RECOGNITION", "question": "The sign for 'Mother' starts with this letter:", "text": "_ OTHER", "answer": "M" }
+        { "id": "l2_q2", "type": "SIGN_RECOGNITION", "question": "The sign for 'Uncle' starts with this letter:", "text": "_ OTHER", "answer": "U" }
       ]
     },
     {

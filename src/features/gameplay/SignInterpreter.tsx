@@ -1,7 +1,10 @@
 import { useRef, useEffect, useState } from 'react';
-import { CheckCircle, XCircle, Loader2, RotateCcw, Camera, ArrowRight } from 'lucide-react';
+import { CheckCircle, XCircle, Loader2, RotateCcw, Camera } from 'lucide-react';
+import { EnvConfig } from '../../EnvConfig';
 
 type Status = 'idle' | 'checking' | 'success' | 'wrong';
+
+const BASE_URL = EnvConfig.VITE_BACKEND_WS_URL
 
 export const SignInterpreter = ({ expectedAnswer, onSuccess, onFailure }: any) => {
     const vRef = useRef<HTMLVideoElement>(null);
@@ -55,7 +58,7 @@ export const SignInterpreter = ({ expectedAnswer, onSuccess, onFailure }: any) =
             streamRef.current = s;
             if (vRef.current) vRef.current.srcObject = s;
 
-            ws.current = new WebSocket("ws://localhost:8000/ws/sign-language");
+            ws.current = new WebSocket(`${BASE_URL}/ws/sign-language`);
             ws.current.onmessage = (e) => {
                 const data = JSON.parse(e.data);
                 setResult(data.sign);

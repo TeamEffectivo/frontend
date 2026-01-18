@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { X, Info, Volume2 } from 'lucide-react';
+import { useState } from 'react';
+import { X, Info } from 'lucide-react';
+import dictionaryData from '../data/dictionary.json';
 
 interface LetterItem {
   letter: string;
@@ -7,12 +8,22 @@ interface LetterItem {
   description: string;
 }
 
-const ALPHABET: LetterItem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(char => ({
-  letter: char,
-  image: `/letters/${char}.png`, // Replace with your assets
-  description: `This is the sign for the letter ${char}. To perform this sign, position your hand clearly in front of your shoulder.`
-}));
+// Transform the JSON dictionary into the LetterItem array
+const alphabetDict = dictionaryData.alphabet_dictionary;
 
+const ALPHABET: LetterItem[] = Object.keys(alphabetDict).map((key) => {
+  // 1. Get the URL from the JSON (the value)
+  const imageUrl = alphabetDict[key as keyof typeof alphabetDict];
+  
+  // 2. Format the display letter to be uppercase
+  const displayLetter = key.toUpperCase();
+
+  return {
+    letter: displayLetter,
+    image: imageUrl,
+    description: `This is the sign for the letter ${displayLetter}. To perform this sign, position your hand clearly in front of your shoulder.`
+  };
+});
 export default function LettersScreen() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLetter, setSelectedLetter] = useState<LetterItem | null>(null);
@@ -43,7 +54,7 @@ export default function LettersScreen() {
             className="group bg-white border-2 border-slate-200 rounded-3xl p-4 flex flex-col items-center hover:border-blue-400 hover:shadow-xl transition-all cursor-pointer"
           >
             <div className="w-full aspect-square bg-slate-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden">
-              <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
+               <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-black text-slate-700">{item.letter}</span>
           </div>
