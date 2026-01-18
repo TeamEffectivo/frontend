@@ -1,0 +1,17 @@
+{
+  "lessons": [
+    {
+      "id": "1",
+      "name": "Basics 1",
+      "challenges": [
+        {
+          "id": "q1",
+          "type": "MULTIPLE_CHOICE",
+          "question": "Which sign is 'A'?",
+          "answer": "A",
+          "options": ["A", "B", "C", "D"]
+        }
+      ]
+    }
+  ]
+}

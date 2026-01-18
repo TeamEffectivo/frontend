@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Sidebar from './components/SideBar';
+import MapScreen from './features/MapScreen';
+import GameScreen from './features/GameScreen';
+import ShopScreen from './features/ShopScreen';
+import LettersScreen from './features/LettersScreen';
+import CalendarScreen from './features/CalendarScreen';
+
+// Simple placeholder for missing routes to ensure something renders
+const Placeholder = ({ name }: { name: string }) => (
+  <div className="p-10">
+    <h1 className="text-2xl font-bold">{name} Screen</h1>
+    <p className="text-gray-500">Coming soon...</p>
+  </div>
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="flex min-h-screen bg-slate-50">
+        <Sidebar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<MapScreen />} />
+            <Route path="/lesson/:id" element={<GameScreen />} />
+            <Route path="/shop" element={<ShopScreen />} />
+            <Route path="/letters" element={<LettersScreen />} />
+            <Route path="/profile" element={<Placeholder name="User Profile" />} />
+            <Route path="/settings" element={<Placeholder name="Settings" />} />
+            <Route path='/calendar' element={<CalendarScreen />}/>
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
