@@ -56,14 +56,20 @@ export default function MapScreen() {
 
   return (
     <div 
-      className="min-h-screen pb-40 bg-[length:100%_auto] bg-repeat-y bg-top"
+      className="min-h-screen pb-40 pr-24 bg-[length:100%_auto] bg-repeat-y bg-top"
       style={{ backgroundImage: "url('/background.png')" }} 
     >
       <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
         {curriculum.lessons.map((lesson, index) => {
-          const indent = index % 4 === 1 ? 'translate-x-32' : 
-                        index % 4 === 2 ? 'translate-x-64' : 
-                        index % 4 === 3 ? 'translate-x-32' : 'translate-x-0';
+          const indent = 
+            index % 8 === 1 ? '-translate-x-22' : 
+            index % 8 === 2 ? '-translate-x-40' : 
+            index % 8 === 3 ? '-translate-x-22' : 
+            index % 8 === 4 ? '-translate-x-0' : 
+            index % 8 === 5 ? 'translate-x-22' : 
+            index % 8 === 6 ? 'translate-x-40' : 
+            index % 8 === 7 ? 'translate-x-22' : 
+            'translate-x-0';
                         
           const isCompleted = lesson.completed;
           const isActive = index === activeLessonIndex;
@@ -94,7 +100,7 @@ export default function MapScreen() {
                     
                     <div className={`
                       w-20 h-20 rounded-full border-b-8 flex items-center justify-center text-white text-2xl font-black shadow-lg
-                      ${isCompleted ? 'bg-blue-500 border-blue-700': 'bg-gray-500 border-gray-700'} 
+                      ${isCompleted ? 'bg-yellow-500 border-yellow-700': 'bg-gray-500 border-gray-700'} 
                       group-active:border-b-0 group-active:translate-y-2 transition-all
                     `}>
                       {index + 1}

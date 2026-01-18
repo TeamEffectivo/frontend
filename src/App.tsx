@@ -16,7 +16,7 @@ function AppContent() {
   return (
     <div className="flex min-h-screen bg-slate-50">
       {!isAuthPage && <Sidebar />}
-      <div className="flex-1">
+      <div className="flex-1 pl-24">
         <Routes>
           <Route path="/" element={<AuthPage />} />
           <Route path="/map" element={<MapScreen />} />
