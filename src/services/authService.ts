@@ -9,7 +9,10 @@ import {
     type ConfirmSignUpOutput,
     type SignInInput,
     type SignInOutput,
-    type AuthSession
+    type AuthSession,
+    type ResendSignUpCodeOutput,
+    type ResendSignUpCodeInput,
+    resendSignUpCode
 } from 'aws-amplify/auth';
 
 export const authService = {
@@ -53,5 +56,10 @@ export const authService = {
     // 5. Logout
     logout: async (): Promise<void> => {
         await signOut();
+    },
+
+    resendCode: async (email: string): Promise<ResendSignUpCodeOutput> => {
+        const input: ResendSignUpCodeInput = { username: email };
+        return await resendSignUpCode(input);
     }
 };
