@@ -1,4 +1,4 @@
-import { Map, Book, ShoppingCart, User, Settings } from 'lucide-react';
+import { Map, Book, ShoppingCart, User, Calendar, Settings } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -30,6 +30,7 @@ export default function Sidebar() {
         <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
         <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
         <NavItem to="/profile" icon={User} label="PROFILE" active={pathname === '/profile'} />
+        <NavItem to="/calendar" icon={Calendar} label="CALENDAR" active={pathname === '/calendar'} />
         <NavItem to="/settings" icon={Settings} label="SETTINGS" active={pathname === '/settings'} />
       </div>
   );
