@@ -1,7 +1,7 @@
 .pixel-container {
   position: relative;
-  width: 80px;
-  height: 120px;
+  width: 95px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,20 +70,28 @@
 }
 
 @keyframes snap-switch {
-  0%, 49% { 
-    opacity: 0; 
+
+  0%,
+  49% {
+    opacity: 0;
   }
-  49%, 100% { 
-    opacity: 1; 
+
+  49%,
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes snap-switch-opposite {
-  0%, 51% { 
-    opacity: 1; 
+
+  0%,
+  51% {
+    opacity: 1;
   }
-  51%, 100% { 
-    opacity: 0; 
+
+  51%,
+  100% {
+    opacity: 0;
   }
 }
 

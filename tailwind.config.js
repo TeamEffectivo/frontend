@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}", // Verify this path is correct
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'pixelify': ['"Pixelify Sans"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
