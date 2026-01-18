@@ -1,0 +1,33 @@
+import { create } from 'zustand';
+
+interface UserState {
+  batteries: number;
+  streak: number;
+  streakFreezes: number;
+  coins: number;
+  deductBattery: () => void;
+  addCoin: (amount: number) => void;
+  buyItem: (type: 'freeze' | 'battery', cost: number) => void;
+}
+
+export const useUserStore = create<UserState>((set) => ({
+  batteries: 5,
+  streak: 0,
+  streakFreezes: 0,
+  coins: 100,
+  
+  deductBattery: () => set((state) => ({ 
+    batteries: Math.max(0, state.batteries - 1) 
+  })),
+  
+  addCoin: (amount) => set((state) => ({ 
+    coins: state.coins + amount 
+  })),
+
+  buyItem: (type, cost) => set((state) => {
+    if (state.coins < cost) return state;
+    if (type === 'freeze') return { coins: state.coins - cost, streakFreezes: state.streakFreezes + 1 };
+    if (type === 'battery') return { coins: state.coins - cost, batteries: state.batteries + 1 };
+    return state;
+  }),
+}));
