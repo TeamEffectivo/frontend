@@ -20,10 +20,13 @@ export default function MapScreen() {
   }
 
   return (
-    <div className="ml-24 min-h-screen bg-white pb-20">
+    <div 
+      className="min-h-screen pb-20 bg-[length:100%_auto] bg-repeat-y bg-top"
+      style={{ backgroundImage: "url('/background.png')" }} 
+    >
       {/* ... Header code remains the same ... */}
 
-      <div className="max-w-2xl mx-auto mt-12 flex flex-col items-center gap-16">
+      <div className="max-w-2xl mx-auto pt-12 flex flex-col items-center gap-16">
         {curriculum.lessons.map((lesson, index) => {
           const indent = index % 4 === 1 ? 'translate-x-12' : 
                         index % 4 === 2 ? 'translate-x-24' : 
