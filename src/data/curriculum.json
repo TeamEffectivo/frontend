@@ -15,37 +15,27 @@
       "name": "The Circle: O",
       "challenges": [
         { "id": "t2_o", "type": "TUTORIAL", "question": "Learn the letter 'O'", "answer": "o" },
-        { "id": "q2_1", "type": "SIGN_RECOGNITION", "question": "Show us an 'O' shape", "answer": "o" },
-        { "id": "q2_2", "type": "FILL_BLANK", "question": "Finish the word: _ O T", "text": "_ O T", "answer": "D" }
+        { "id": "q2_1", "type": "SIGN_RECOGNITION", "question": "Show us an 'O' shape", "answer": "o" }
+    
       ]
     },
     {
       "id": "3",
-      "name": "Pointing High: U & L",
+      "name": "Pointing High: M & L",
       "challenges": [
-        { "id": "t3_d", "type": "TUTORIAL", "question": "Learn the letter 'U'", "answer": "U" },
+        { "id": "t3_d", "type": "TUTORIAL", "question": "Learn the letter 'S", "answer": "s" },
         { "id": "t3_l", "type": "TUTORIAL", "question": "Learn the letter 'L'", "answer": "l" },
         { "id": "q3_1", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'L'", "answer": "l" },
         { "id": "q3_2", "type": "MULTIPLE_CHOICE", "question": "Which sign looks like an 'L' shape with thumb and index?", "options": ["L", "D", "O", "A"], "answer": "L" }
       ]
     },
-    {
-      "id": "4",
-      "name": "Expressing Love",
-      "challenges": [
-        { "id": "t4_love", "type": "TUTORIAL", "question": "Learn the sign for 'LOVE'", "answer": "love" },
-        { "id": "q4_1", "type": "SIGN_RECOGNITION", "question": "Cross your arms to sign...", "answer": "love" },
-        { "id": "q4_2", "type": "MULTIPLE_CHOICE", "question": "What does crossing your fists over your chest mean?", "options": ["Quiet", "Think", "Love", "Good"], "answer": "Love" }
-      ]
-    },
+
     {
       "id": "5",
       "name": "Fingers Up: U & W",
       "challenges": [
-        { "id": "t5_u", "type": "TUTORIAL", "question": "Learn the letter 'U'", "answer": "u" },
         { "id": "t5_w", "type": "TUTORIAL", "question": "Learn the letter 'W'", "answer": "w" },
-        { "id": "q5_1", "type": "SIGN_RECOGNITION", "question": "Sign 'W' (3 fingers up)", "answer": "w" },
-        { "id": "q5_2", "type": "SIGN_RECOGNITION", "question": "Sign 'U' (2 fingers together)", "answer": "u" }
+        { "id": "q5_1", "type": "SIGN_RECOGNITION", "question": "Sign 'W' (3 fingers up)", "answer": "w" }
       ]
     },
     {
@@ -89,7 +79,6 @@
       "id": "10",
       "name": "The Grand Review",
       "challenges": [
-        { "id": "q10_1", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'LOVE'", "answer": "love" },
         { "id": "q10_2", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'A'", "answer": "a" },
         { "id": "q10_3", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'Y'", "answer": "y" }
       ]
