@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Info, Volume2 } from 'lucide-react';
+import { useState } from 'react';
+import { X, Info } from 'lucide-react';
 import dictionaryData from '../data/dictionary.json';
 
 interface LetterItem {
