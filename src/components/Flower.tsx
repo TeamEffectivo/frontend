@@ -1,7 +1,7 @@
 import React from 'react';
 import './Palmo.css';
-import image1 from '../../public/flower1.png';
-import image2 from '../../public/flower2.png';
+import image1 from '/flower1.png';
+import image2 from '/flower2.png';
 
 const Flower = ({ speed = 1 }) => {
   return (
