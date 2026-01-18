@@ -3,6 +3,7 @@ import Sidebar from './components/SideBar';
 import MapScreen from './features/MapScreen';
 import GameScreen from './features/GameScreen';
 import ShopScreen from './features/ShopScreen';
+import SignInterpreter from './components/TESTWebsocketInterpreter'
 
 // Simple placeholder for missing routes to ensure something renders
 const Placeholder = ({ name }: { name: string }) => (
@@ -28,9 +29,8 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
+        <SignInterpreter></SignInterpreter>
       </div>
     </Router>
   );
 }
-
-export default App;
