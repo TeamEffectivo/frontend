@@ -42,7 +42,7 @@
         },
         {
           "id": "l2_q2",
-          "type": "FILL_BLANK",
+          "type": "SIGN_RECOGNITION",
           "question": "The sign for 'Mother' starts with this letter:",
           "text": "_ OTHER",
           "answer": "M"
@@ -70,7 +70,7 @@
         },
         {
           "id": "l3_q3",
-          "type": "FILL_BLANK",
+          "type": "SIGN_RECOGNITION",
           "question": "Identify the sign and fill the blank: D _ G",
           "text": "D _ G",
           "image": "/assets/signs/o.png",
