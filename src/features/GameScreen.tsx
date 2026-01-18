@@ -97,6 +97,7 @@ export default function GameScreen() {
                 setStep(s => s + 1);
             } else {
                 addCoin(50);
+              if (parseInt(lesson.id) > parseInt(localStorage.getItem(`palmo_user_progress`)!)) localStorage.setItem(`palmo_user_progress`, lesson.id)
                 navigate('/map');
             }
         }} 

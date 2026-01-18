@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
-import Palmo from '../components/Palmo';
+import Palmo from '../Components/Palmo';
 import { useEffect, useRef } from 'react';
 
 const curriculum = curriculumData as Curriculum;
 
 export default function MapScreen() {
-  const activeLessonIndex = curriculum.lessons.findIndex(l => !l.completed);
+  // Get the player's progress. Default to 0 (Lesson 1) if nothing is in storage.
+  const rawProgress = localStorage.getItem('palmo_user_progress');
+  if (!rawProgress) localStorage.setItem(`palmo_user_progress`, "0")
+  const currentLevelIndex = rawProgress ? parseInt(rawProgress, 10) : 0;
+
   const activeLessonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,35 +59,37 @@ export default function MapScreen() {
   }
 
   return (
-    <div 
+    <div
       className="min-h-screen pb-40 bg-[length:100%_auto] bg-repeat-y bg-top"
-      style={{ backgroundImage: "url('/background.png')" }} 
+      style={{ backgroundImage: "url('/background.png')" }}
     >
       <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
         {curriculum.lessons.map((lesson, index) => {
-          const indent = index % 4 === 1 ? 'translate-x-32' : 
-                        index % 4 === 2 ? 'translate-x-64' : 
-                        index % 4 === 3 ? 'translate-x-32' : 'translate-x-0';
-                        
-          const isCompleted = lesson.completed;
-          const isActive = index === activeLessonIndex;
-          
-          const isLocked = !isCompleted && !isActive;
+
+          const isCompleted = index < currentLevelIndex;
+          const isActive = index === currentLevelIndex;
+          const isLocked = index > currentLevelIndex;
+
+
+          const indent = index % 4 === 1 ? 'translate-x-32' :
+            index % 4 === 2 ? 'translate-x-64' :
+              index % 4 === 3 ? 'translate-x-32' : 'translate-x-0';
 
           return (
-            <div 
-              key={lesson.id} 
+            <div
+              key={lesson.id}
               ref={isActive ? activeLessonRef : null}
               className={`relative transition-transform duration-500 ${indent}`}
             >
-              {/* If locked, we prevent navigation by wrapping in a fragment or div instead of Link */}
               {isLocked ? (
+                /* Locked Style */
                 <button disabled className="relative cursor-not-allowed opacity-60">
-                  <div className="w-20 h-20 rounded-full border-b-8 bg-gray-400 border-gray-600 flex items-center justify-center text-gray-200 text-2xl font-black shadow-none">
+                  <div className="w-20 h-20 rounded-full border-b-8 bg-gray-400 border-gray-600 flex items-center justify-center text-gray-200 text-2xl font-black">
                     {index + 1}
                   </div>
                 </button>
               ) : (
+                /* Completed or Active Style */
                 <Link to={`/lesson/${lesson.id}`}>
                   <button className="group relative">
                     {isActive && (
@@ -91,10 +97,10 @@ export default function MapScreen() {
                         <Palmo />
                       </div>
                     )}
-                    
+
                     <div className={`
                       w-20 h-20 rounded-full border-b-8 flex items-center justify-center text-white text-2xl font-black shadow-lg
-                      ${isCompleted ? 'bg-blue-500 border-blue-700': 'bg-gray-500 border-gray-700'} 
+                      ${isCompleted ? 'bg-blue-500 border-blue-700' : 'bg-green-500 border-green-700'} 
                       group-active:border-b-0 group-active:translate-y-2 transition-all
                     `}>
                       {index + 1}

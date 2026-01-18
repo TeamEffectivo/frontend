@@ -6,7 +6,7 @@ import LettersScreen from './features/LettersScreen';
 import CalendarScreen from './features/CalendarScreen';
 import AuthPage from './features/AuthPage';
 import Profile from './features/Profile';
-import Sidebar from './components/SideBar';
+import Sidebar from './Components/SideBar';
 
 
 function AppContent() {
