@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
-import Palmo from '../components/Palmo';
+import Palmo from '../Components/Palmo';
 import { useEffect, useRef } from 'react';
 
 const curriculum = curriculumData as Curriculum;
@@ -60,16 +60,15 @@ export default function MapScreen() {
 
   return (
     <div 
-      className="min-h-screen pb-40 pr-24 bg-[length:100%_auto] bg-repeat-y bg-top"
+      className="relative min-h-screen pb-40 pr-24 bg-[length:100%_auto] bg-repeat-y bg-top relative"
       style={{ backgroundImage: "url('/background.png')" }} 
     >
-      <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
+      <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20 relative">
         {curriculum.lessons.map((lesson, index) => {
 
           const isCompleted = index < currentLevelIndex;
           const isActive = index === currentLevelIndex;
           const isLocked = index > currentLevelIndex;
-
 
           const indent = 
             index % 8 === 1 ? '-translate-x-22' :
@@ -90,7 +89,7 @@ export default function MapScreen() {
               {isLocked ? (
                 /* Locked Style */
                 <button disabled className="relative cursor-not-allowed opacity-60">
-                  <div className="w-20 h-20 rounded-full border-b-8 bg-gray-400 border-gray-600 flex items-center justify-center text-gray-200 text-2xl font-black">
+                  <div className="w-24 h-24 rounded-full border-b-8 bg-gray-400 border-gray-600 flex items-center justify-center text-gray-200 text-3xl font-black">
                     {index + 1}
                   </div>
                 </button>
@@ -105,8 +104,8 @@ export default function MapScreen() {
                     )}
 
                     <div className={`
-                      w-20 h-20 rounded-full border-b-8 flex items-center justify-center text-white text-2xl font-black shadow-lg
-                      ${isCompleted ? 'bg-yellow-500 border-yellow-700': 'bg-gray-500 border-gray-700'} 
+                      w-24 h-24 rounded-full border-b-8 flex items-center justify-center text-white text-3xl font-black shadow-lg
+                      ${isCompleted ? 'bg-yellow-500 border-yellow-700' : isActive ? 'bg-blue-500 border-blue-700' : 'bg-gray-500 border-gray-700'} 
                       group-active:border-b-0 group-active:translate-y-2 transition-all
                     `}>
                       {index + 1}
@@ -117,6 +116,9 @@ export default function MapScreen() {
             </div>
           );
         })}
+        <div className="w-full flex justify-end pr-8 pb-8 mt-auto fixed bottom-0 right-0">
+          <h1 className="text-6xl font-pixelify font-bold text-white">HAPPY <br></br>PALMO</h1>
+        </div>
       </div>
     </div>
   );
