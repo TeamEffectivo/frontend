@@ -25,7 +25,7 @@ export default function Sidebar() {
   const { pathname } = useLocation();
   
   return (
-      <div className="flex flex-col bg-white items-center gap-2">
+      <div className="flex flex-col items-center gap-2">
         <NavItem to="/" icon={Map} label="MAP" active={pathname === '/'} />
         <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
         <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
