@@ -26,7 +26,7 @@ export default function Sidebar() {
   
   return (
       <div className="flex flex-col items-center gap-2">
-        <NavItem to="/" icon={Map} label="MAP" active={pathname === '/'} />
+        <NavItem to="/map" icon={Map} label="MAP" active={pathname === '/'} />
         <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
         <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
         <NavItem to="/profile" icon={User} label="PROFILE" active={pathname === '/profile'} />
