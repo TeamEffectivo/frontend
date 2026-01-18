@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Sidebar from './components/SideBar';
+import Sidebar from './Components/SideBar';
 import MapScreen from './features/MapScreen';
 import GameScreen from './features/GameScreen';
 import ShopScreen from './features/ShopScreen';
