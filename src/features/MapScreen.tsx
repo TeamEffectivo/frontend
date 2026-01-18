@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
-import Palmo from '../Components/Palmo';
+import Palmo from '../components/Palmo';
 import { useEffect, useRef } from 'react';
 
 const curriculum = curriculumData as Curriculum;
@@ -28,9 +28,9 @@ export default function MapScreen() {
         if (!start) start = timestamp;
         const progress = timestamp - start;
         const percentage = Math.min(progress / duration, 1);
-        
+
         const easing = percentage < 0.6
-          ? 2 * percentage * percentage 
+          ? 2 * percentage * percentage
           : -1 + (4 - 2 * percentage) * percentage;
 
         window.scrollTo(0, startY + distance * easing);

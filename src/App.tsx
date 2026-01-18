@@ -6,7 +6,7 @@ import LettersScreen from './features/LettersScreen';
 import CalendarScreen from './features/CalendarScreen';
 import AuthPage from './features/AuthPage';
 import Profile from './features/Profile';
-import Sidebar from './Components/SideBar';
+import Sidebar from './components/SideBar';
 
 
 function AppContent() {
@@ -24,7 +24,7 @@ function AppContent() {
           <Route path="/shop" element={<ShopScreen />} />
           <Route path="/letters" element={<LettersScreen />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path='/calendar' element={<CalendarScreen />}/>
+          <Route path='/calendar' element={<CalendarScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
