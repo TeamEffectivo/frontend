@@ -29,7 +29,6 @@ function App() {
             <Route path="/shop" element={<ShopScreen />} />
             <Route path="/letters" element={<LettersScreen />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/settings" element={<Placeholder name="Settings" />} />
             <Route path='/calendar' element={<CalendarScreen />}/>
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
