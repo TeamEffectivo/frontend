@@ -9,7 +9,7 @@ interface LetterItem {
 
 const ALPHABET: LetterItem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(char => ({
   letter: char,
-  image: `https://placehold.co/400x400?text=${char}+Sign`, // Replace with your assets
+  image: `/letters/${char}.png`, // Replace with your assets
   description: `This is the sign for the letter ${char}. To perform this sign, position your hand clearly in front of your shoulder.`
 }));
 
