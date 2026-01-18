@@ -16,6 +16,22 @@
   image-rendering: pixelated;
 }
 
+.bush-pixel-container {
+  position: relative;
+  width: 120px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bush-pixel-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
 /* Base image stays visible slightly past the 50% mark */
 .base-pixel {
   animation: snap-switch-opposite 1s infinite steps(1);
