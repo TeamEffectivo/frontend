@@ -1,4 +1,4 @@
-import { Map, Book, ShoppingCart, User, Calendar, Settings, LogOut } from 'lucide-react';
+import { Map, Book, ShoppingCart, User, Calendar, LogOut } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
@@ -58,13 +58,15 @@ export default function Sidebar() {
   }, [pathname]);
 
   return (
-      <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-2 mt-8">
+      <div className="flex flex-col gap-2">
         <NavItem to="/map" icon={Map} label="MAP" active={pathname === '/'} />
         <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
+      <NavItem to="/calendar" icon={Calendar} label="CALENDAR" active={pathname === '/calendar'} />
         <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
         <NavItem to="/profile" icon={User} label="PROFILE" active={pathname === '/profile'} />
-        <NavItem to="/calendar" icon={Calendar} label="CALENDAR" active={pathname === '/calendar'} />
-        <NavItem to="/settings" icon={Settings} label="SETTINGS" active={pathname === '/settings'} />
+        </div>
+        
         {isLoggedIn && (
           <button
             onClick={handleLogout}
