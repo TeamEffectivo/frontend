@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Info, Volume2 } from 'lucide-react';
+import dictionaryData from '../data/dictionary.json';
 
 interface LetterItem {
   letter: string;
@@ -7,12 +8,22 @@ interface LetterItem {
   description: string;
 }
 
-const ALPHABET: LetterItem[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(char => ({
-  letter: char,
-  image: `/letters/${char}.png`, // Replace with your assets
-  description: `This is the sign for the letter ${char}. To perform this sign, position your hand clearly in front of your shoulder.`
-}));
+// Transform the JSON dictionary into the LetterItem array
+const alphabetDict = dictionaryData.alphabet_dictionary;
 
+const ALPHABET: LetterItem[] = Object.keys(alphabetDict).map((key) => {
+  // 1. Get the URL from the JSON (the value)
+  const imageUrl = alphabetDict[key as keyof typeof alphabetDict];
+  
+  // 2. Format the display letter to be uppercase
+  const displayLetter = key.toUpperCase();
+
+  return {
+    letter: displayLetter,
+    image: imageUrl,
+    description: `This is the sign for the letter ${displayLetter}. To perform this sign, position your hand clearly in front of your shoulder.`
+  };
+});
 export default function LettersScreen() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLetter, setSelectedLetter] = useState<LetterItem | null>(null);
@@ -86,9 +97,6 @@ export default function LettersScreen() {
                 </div>
 
                 <div className="flex gap-2 pt-4">
-                  <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
-                    <Volume2 size={20} /> Pronounce
-                  </button>
                   <button 
                     onClick={() => setSelectedLetter(null)}
                     className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-4 rounded-2xl transition-all"
