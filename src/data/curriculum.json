@@ -21,9 +21,9 @@
     },
     {
       "id": "3",
-      "name": "Pointing High: D & L",
+      "name": "Pointing High: U & L",
       "challenges": [
-        { "id": "t3_d", "type": "TUTORIAL", "question": "Learn the letter 'D'", "answer": "d" },
+        { "id": "t3_d", "type": "TUTORIAL", "question": "Learn the letter 'U'", "answer": "U" },
         { "id": "t3_l", "type": "TUTORIAL", "question": "Learn the letter 'L'", "answer": "l" },
         { "id": "q3_1", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'L'", "answer": "l" },
         { "id": "q3_2", "type": "MULTIPLE_CHOICE", "question": "Which sign looks like an 'L' shape with thumb and index?", "options": ["L", "D", "O", "A"], "answer": "L" }
@@ -92,6 +92,94 @@
         { "id": "q10_1", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'LOVE'", "answer": "love" },
         { "id": "q10_2", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'A'", "answer": "a" },
         { "id": "q10_3", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'Y'", "answer": "y" }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "The Letters: O, P, Q",
+      "challenges": [
+        { "id": "l11_q1", "type": "SIGN_RECOGNITION", "question": "This sign looks like a 'G' pointing down:", "image": "/letters/q.png", "options": ["G", "Q", "P", "Y"], "answer": "Q" },
+        { "id": "l11_q2", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'O' (the circle shape).", "letter": "O", "answer": "O" }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Food: Apple & Pear",
+      "challenges": [
+        { "id": "l12_q1", "type": "MULTIPLE_CHOICE", "question": "'Apple' starts with:", "image": "/letters/a.png", "options": ["A", "E", "O", "S"], "answer": "A" },
+        { "id": "l12_q2", "type": "SIGN_RECOGNITION", "question": "'Pear' starts with:", "image": "/letters/p.png", "options": ["P", "Q", "K", "D"], "answer": "P" }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "The Letters: R, S, T",
+      "challenges": [
+        { "id": "l13_q1", "type": "SIGN_RECOGNITION", "question": "Fingers crossed! This is the letter:", "image": "/letters/r.png", "options": ["R", "X", "V", "U"], "answer": "R" },
+        { "id": "l13_q2", "type": "MULTIPLE_CHOICE", "question": "Which letter is a closed fist with thumb in middle?", "image": "/letters/t.png", "options": ["S", "T", "A", "M"], "answer": "T" }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Feelings: Sad & Happy",
+      "challenges": [
+        { "id": "l14_q1", "type": "SIGN_RECOGNITION", "question": "'SAD' starts with:", "image": "/letters/s.png", "options": ["A", "E", "S", "O"], "answer": "S" },
+        { "id": "l14_q2", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'H' for 'HAPPY'.", "letter": "H", "answer": "H" }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Feelings: Sad & Happy",
+      "challenges": [
+        { "id": "l14_q1", "type": "SIGN_RECOGNITION", "question": "'SAD' starts with:", "image": "/letters/s.png", "options": ["A", "E", "S", "O"], "answer": "S" },
+        { "id": "l14_q2", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'H' for 'HAPPY'.", "letter": "H", "answer": "H" }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "The Letters: U, V, W",
+      "challenges": [
+        { "id": "l15_q1", "type": "MULTIPLE_CHOICE", "question": "Two fingers up and closed:", "image": "/letters/u.png", "options": ["U", "V", "W", "R"], "answer": "U" },
+        { "id": "l15_q2", "type": "MULTIPLE_CHOICE", "question": "Three fingers up like the letter shape:", "image": "/letters/w.png", "options": ["W", "V", "U", "E"], "answer": "W" }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Weather Signs",
+      "challenges": [
+        { "id": "l16_q1", "type": "SIGN_RECOGNITION", "question": "'SUN' starts with:", "image": "/letters/s.png", "options": ["S", "C", "O", "A"], "answer": "S" },
+        { "id": "l16_q2", "type": "SIGN_RECOGNITION", "question": "Fill the blank for 'RAIN': _ AIN", "text": "_ AIN", "image": "/letters/r.png", "answer": "R" }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "The Finale: X, Y, Z",
+      "challenges": [
+        { "id": "l17_q1", "type": "SIGN_RECOGNITION", "question": "The hook shape. This is:", "image": "/letters/x.png", "options": ["X", "Y", "Z", "R"], "answer": "X" },
+        { "id": "l17_q2", "type": "SIGN_RECOGNITION", "question": "The 'Hang Loose' shape is which letter?", "image": "/letters/y.png", "options": ["Y", "J", "I", "P"], "answer": "Y" }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Animal Kingdom",
+      "challenges": [
+        { "id": "l18_q1", "type": "MULTIPLE_CHOICE", "question": "Which letter starts 'ZEBRA'?", "image": "/letters/z.png", "options": ["Z", "X", "D", "J"], "answer": "Z" },
+        { "id": "l18_q2", "type": "SIGN_RECOGNITION", "question": "The sign for 'FOX' starts with:", "image": "/letters/f.png", "options": ["F", "D", "B", "O"], "answer": "F" }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Spelling Master",
+      "challenges": [
+        { "id": "l19_q1", "type": "SIGN_RECOGNITION", "question": "Identify the sign: B _ X", "text": "B _ X", "image": "/letters/o.png", "answer": "O" },
+        { "id": "l19_q2", "type": "SIGN_RECOGNITION", "question": "Identify the sign: _ U N", "text": "_ U N", "image": "/letters/s.png", "answer": "S" }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Alphabet Graduation",
+      "challenges": [
+        { "id": "l20_q1", "type": "SIGN_RECOGNITION", "question": "Final Exam: What is this letter?", "image": "/letters/j.png", "options": ["I", "J", "Z", "L"], "answer": "J" },
+        { "id": "l20_q2", "type": "SIGN_RECOGNITION", "question": "Sign the very first letter of the alphabet!", "letter": "A", "answer": "A" }
       ]
     }
   ]
