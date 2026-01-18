@@ -77,6 +77,11 @@ export default function SignIn() {
             {step === 'SIGNUP' && 'Sign Up'}
             {step === 'VERIFY' && 'Verify Email'}
           </h1>
+          {step === 'VERIFY' && (
+            <p className="text-slate-600 text-lg mt-2">
+              Please check your email for the verification code.
+            </p>
+          )}
 
         </div>
 
