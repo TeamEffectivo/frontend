@@ -12,7 +12,7 @@ interface Props {
 
 export const MultipleChoice = ({ challenge, onAnswer, selectedOption, isCorrect, showNext }: Props) => {
   // 1. Look up the image URL from dictionary.json
-  const alphabetDict = dictionaryData.alphabet_dictionary;
+  const alphabetDict = dictionaryData.dictionary;
   const lowercaseKey = challenge.answer.toLowerCase();
   const imageUrl = alphabetDict[lowercaseKey as keyof typeof alphabetDict];
 

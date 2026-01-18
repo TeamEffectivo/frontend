@@ -5,6 +5,7 @@ import curriculumData from '../data/curriculum.json';
 import { MultipleChoice } from './gameplay/MultipleChoice';
 import { SignInterpreter } from './gameplay/SignInterpreter';
 import { FillBlank } from './gameplay/FillBlank';
+import { Reference } from '../components/Reference';
 import { X, ChevronRight, AlertCircle } from 'lucide-react';
 import type { Curriculum } from '../types';
 
@@ -65,6 +66,16 @@ export default function GameScreen() {
         </h2>
 
         <div className="w-full max-w-2xl">
+            {challenge.type === 'TUTORIAL' && (
+                <div className="grid md:grid-cols-2 gap-8 items-center animate-in fade-in zoom-in-95 duration-500">
+                    <Reference sign={challenge.answer} />
+                    <SignInterpreter 
+                        expectedAnswer={challenge.answer} 
+                        onSuccess={() => handleAnswer(challenge.answer)}
+                        onFailure={() => handleAnswer("WRONG_GESTURE")} 
+                    />
+                </div>
+            )}
             {challenge.type === 'MULTIPLE_CHOICE' && (
             <MultipleChoice 
                 challenge={challenge} 

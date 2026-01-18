@@ -9,7 +9,7 @@ interface LetterItem {
 }
 
 // Transform the JSON dictionary into the LetterItem array
-const alphabetDict = dictionaryData.alphabet_dictionary;
+const alphabetDict = dictionaryData.dictionary;
 
 const ALPHABET: LetterItem[] = Object.keys(alphabetDict).map((key) => {
   // 1. Get the URL from the JSON (the value)
@@ -54,7 +54,7 @@ export default function LettersScreen() {
             className="group bg-white border-2 border-slate-200 rounded-3xl p-4 flex flex-col items-center hover:border-blue-400 hover:shadow-xl transition-all cursor-pointer"
           >
             <div className="w-full aspect-square bg-slate-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden">
-               <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
+              <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-black text-slate-700">{item.letter}</span>
           </div>
