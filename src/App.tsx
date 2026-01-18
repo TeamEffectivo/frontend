@@ -5,8 +5,8 @@ import GameScreen from './features/GameScreen';
 import ShopScreen from './features/ShopScreen';
 import LettersScreen from './features/LettersScreen';
 import CalendarScreen from './features/CalendarScreen';
-import { LoginPage } from './features/LogIn';
-import { VerifyPage } from './features/VeriftPage';
+import AuthPage from './features/AuthPage';
+import Profile from './features/Profile';
 
 // Simple placeholder for missing routes to ensure something renders
 const Placeholder = ({ name }: { name: string }) => (
@@ -23,13 +23,12 @@ function App() {
         <Sidebar />
         <div className="flex-1">
           <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/verify" element={<VerifyPage />} />
+            <Route path="/" element={<AuthPage />} />
             <Route path="/Map" element={<MapScreen />} />
             <Route path="/lesson/:id" element={<GameScreen />} />
             <Route path="/shop" element={<ShopScreen />} />
             <Route path="/letters" element={<LettersScreen />} />
-            <Route path="/profile" element={<Placeholder name="User Profile" />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Placeholder name="Settings" />} />
             <Route path='/calendar' element={<CalendarScreen />}/>
             <Route path="*" element={<Navigate to="/" replace />} />
