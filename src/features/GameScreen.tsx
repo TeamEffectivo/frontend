@@ -5,6 +5,7 @@ import curriculumData from '../data/curriculum.json';
 import { MultipleChoice } from './gameplay/MultipleChoice';
 import { SignInterpreter } from './gameplay/SignInterpreter';
 import { FillBlank } from './gameplay/FillBlank';
+import { Reference } from '../components/Reference';
 import { X, ChevronRight, AlertCircle } from 'lucide-react';
 import type { Curriculum } from '../types';
 
@@ -20,7 +21,7 @@ export default function GameScreen() {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showNext, setShowNext] = useState(false);
 
-  const { deductBattery, batteries, addCoin } = useUserStore();
+  const { deductBattery, batteries, addCoin, incrementStreak, resetStreak, streak } = useUserStore();
 
   const lesson = curriculum.lessons.find(l => l.id === id);
   if (!lesson) return <div>Lesson Not Found</div>;
@@ -43,8 +44,10 @@ export default function GameScreen() {
 
     if (correct) {
       addCoin(5);
+      incrementStreak();
       setShowNext(true);
     } else {
+      resetStreak();
       const newAttempts = attempts + 1;
       setAttempts(newAttempts);
       deductBattery();
@@ -63,6 +66,16 @@ export default function GameScreen() {
         </h2>
 
         <div className="w-full max-w-2xl">
+            {challenge.type === 'TUTORIAL' && (
+                <div className="grid md:grid-cols-2 gap-8 items-center animate-in fade-in zoom-in-95 duration-500">
+                    <Reference sign={challenge.answer} />
+                    <SignInterpreter 
+                        expectedAnswer={challenge.answer} 
+                        onSuccess={() => handleAnswer(challenge.answer)}
+                        onFailure={() => handleAnswer("WRONG_GESTURE")} 
+                    />
+                </div>
+            )}
             {challenge.type === 'MULTIPLE_CHOICE' && (
             <MultipleChoice 
                 challenge={challenge} 
@@ -91,7 +104,8 @@ export default function GameScreen() {
 
       <Footer 
         showNext={showNext} 
-        isCorrect={isCorrect} 
+        isCorrect={isCorrect}
+        streak={streak}
         onNext={() => {
             if (step < lesson.challenges.length - 1) {
                 setStep(s => s + 1);
@@ -123,9 +137,12 @@ const Header = ({ progress, onExit }: any) => (
 const FeedbackArea = ({ isCorrect, selectedOption, attempts, answer }: any) => (
   <div className="h-24 mt-4 flex flex-col items-center justify-center text-center">
     {!isCorrect && selectedOption && attempts < 3 && (
-      <div className="flex items-center gap-2 text-red-500 font-black animate-bounce">
-        <AlertCircle size={24} />
-        <span>Try again! ({3 - attempts} lives left)</span>
+      <div className="flex items-center gap-4 text-red-500 font-black">
+    
+        <div className="flex items-center gap-2 animate-bounce">
+          <AlertCircle size={24} />
+          <span>Try again! ({3 - attempts} lives left)</span>
+        </div>
       </div>
     )}
     {attempts >= 3 && !isCorrect && (
@@ -137,16 +154,30 @@ const FeedbackArea = ({ isCorrect, selectedOption, attempts, answer }: any) => (
   </div>
 );
 
-const Footer = ({ showNext, isCorrect, onNext }: any) => (
+const Footer = ({ showNext, isCorrect, onNext, streak }: any) => (
   <div className={`fixed bottom-0 left-0 right-0 p-8 border-t-4 transition-all duration-500 ease-in-out transform ${
     showNext ? 'translate-y-0 opacity-100 bg-white border-green-100' : 'translate-y-full opacity-0 bg-transparent border-transparent'
   }`}>
     <div className="max-w-2xl mx-auto flex justify-between items-center">
-      <div>
-        <p className={`font-black text-2xl ${isCorrect ? 'text-green-600' : 'text-orange-500'}`}>
+      <div className="flex items-center gap-4">
+        {showNext && (
+          <div className="flex-shrink-0 w-62 h-38 rounded-xl overflow-hidden">
+            <img 
+              src={isCorrect && streak >= 3 ? "/streak.gif" : isCorrect ? "/veryHappy.gif" : "/sad.gif"} 
+              alt={isCorrect && streak >= 3 ? "Streak!" : isCorrect ? "Very happy duck" : "Sad duck"} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        <div>
+          <p className={`font-black text-2xl ${isCorrect ? 'text-green-600' : 'text-orange-500'}`}>
             {isCorrect ? "AMAZING!" : "KEEP GOING!"}
-        </p>
-        <p className="text-slate-400 font-bold text-sm">+5 Coins earned</p>
+          </p>
+          <p className="text-slate-400 font-bold text-sm">+5 Coins earned</p>
+          {isCorrect && streak > 1 && (
+            <p className="text-yellow-500 font-bold text-sm mt-1">🔥 {streak} in a row!</p>
+          )}
+        </div>
       </div>
       <button 
         onClick={onNext} 

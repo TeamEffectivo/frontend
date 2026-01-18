@@ -1,4 +1,4 @@
-export type ChallengeType = 'MULTIPLE_CHOICE' | 'FILL_BLANK' | 'SIGN_RECOGNITION';
+export type ChallengeType = 'MULTIPLE_CHOICE' | 'FILL_BLANK' | 'SIGN_RECOGNITION' | 'TUTORIAL';
 
 export interface Challenge {
   id: string;
