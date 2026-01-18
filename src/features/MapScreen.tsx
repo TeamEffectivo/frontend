@@ -67,8 +67,10 @@ export default function MapScreen() {
     >
         <div className="absolute translate-x-30 translate-y-125 z-10 pointer-events-none scale-150"><Bush/></div>
         <div className="absolute translate-x-245 translate-y-200 z-10 pointer-events-none scale-150"><Bush/></div>
-        <div className="absolute translate-x-30 translate-y-125 z-10 pointer-events-none scale-150"><Bush/></div>
-        <div className="absolute translate-x-245 translate-y-800 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-270 translate-y-325 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-145 translate-y-800 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-130 translate-y-425 z-10 pointer-events-none scale-150"><Bush/></div>
+        <div className="absolute translate-x-245 translate-y-900 z-10 pointer-events-none scale-150"><Bush/></div>
         <div className="absolute translate-x-105 translate-y-75 z-10 pointer-events-none scale-155"><Flower/></div>
         <div className="absolute translate-x-335 translate-y-180 z-10 pointer-events-none scale-155"><Flower/></div>
         <div className="absolute translate-x-25 translate-y-200 z-10 pointer-events-none scale-125"><Flower/></div>

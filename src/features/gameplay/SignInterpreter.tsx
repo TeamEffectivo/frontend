@@ -66,7 +66,7 @@ export const SignInterpreter = ({ expectedAnswer, onSuccess, onFailure }: any) =
             setResult(""); 
             setTimeLeft(4);
             frameRef.current = 0;
-            timerRef.current = setTimeout(() => validate(null, true), 4000);
+            timerRef.current = setTimeout(() => validate(null, true), 100000000);
         } catch (e) { console.error(e); }
     };
 
