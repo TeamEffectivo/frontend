@@ -1,13 +1,3 @@
-// src/features/GameScreen.tsx
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useUserStore } from '../store/useUserStore';
-import curriculumData from '../data/curriculum.json';
-import { MultipleChoice } from './gameplay/MultipleChoice';
-import { SignInterpreter } from './gameplay/SignInterpreter';
-import { FillBlank } from './gameplay/FillBlank';
-import { X, ChevronRight, AlertCircle } from 'lucide-react';
-import type { Curriculum } from '../types';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useUserStore } from "../store/useUserStore";
@@ -20,7 +10,6 @@ const curriculum = curriculumData as unknown as Curriculum;
 export default function GameScreen() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  
 
   // Game Logic State
   const [step, setStep] = useState(0);
@@ -31,10 +20,6 @@ export default function GameScreen() {
   const [streak, setStreak] = useState(0);
 
   const { deductBattery, batteries, addCoin } = useUserStore();
-
-  const lesson = curriculum.lessons.find(l => l.id === id);
-  if (!lesson) return <div>Lesson Not Found</div>;
-  const challenge = lesson.challenges[step];
 
   // Reset state when lesson changes
   // This is a valid pattern for resetting component state when a prop changes
