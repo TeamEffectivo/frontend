@@ -41,7 +41,7 @@ export default function SignIn() {
         await authService.confirmRegistration(email, code);
         localStorage.removeItem('palmo_pending_email');
         setErrorMsg(""); // Clear any previous errors
-        setSuccessMsg("Email successfully verified."); // Set success message
+        setSuccessMsg("Email successfully verified. Please sign in below."); // Set success message
         setStep('LOGIN'); // Move back to login after success
       }
       else {
