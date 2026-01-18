@@ -58,6 +58,7 @@ export default function Sidebar() {
   }, [pathname]);
 
   return (
+<<<<<<< Updated upstream
     <div 
       className="flex flex-col items-center gap-2 pt-8 min-h-screen w-24 relative"
       style={{ 
@@ -91,5 +92,21 @@ export default function Sidebar() {
         )}
       </div>
     </div>
+=======
+    <aside className="fixed left-0 top-0 h-screen w-24 bg-white border-r-2 border-slate-100 flex flex-col items-center py-8 z-50">
+      <div className="mb-10 text-blue-600 font-black text-sm">
+        <img src="../../public/mascot_small.png" width="60" height="60" alt="palmo" />
+      </div>
+
+      <div className="flex flex-col items-center gap-6 w-full px-2">
+        <NavItem to="/" icon={Map} label="MAP" active={pathname === '/'} />
+        <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
+        <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
+        <NavItem to="/profile" icon={User} label="PROFILE" active={pathname === '/profile'} />
+        <NavItem to="/calendar" icon={Calendar} label="CALENDAR" active={pathname === '/calendar'} />
+        <NavItem to="/settings" icon={Settings} label="SETTINGS" active={pathname === '/settings'} />
+      </div>
+    </aside>
+>>>>>>> Stashed changes
   );
 }
