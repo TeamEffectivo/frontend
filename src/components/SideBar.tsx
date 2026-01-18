@@ -15,11 +15,11 @@ const NavItem = ({ to, icon: Icon, label, active }: NavItemProps) => (
   <Link 
     to={to} 
     className={`flex flex-col items-center px-4 py-2 rounded-xl transition-colors w-20 ${
-      active ? 'bg-blue-100 text-blue-800' : 'text-slate-700 hover:bg-gray-100'
+      active ? 'bg-gray-100 text-slate-700' : 'text-slate-700 hover:bg-gray-100'
     }`}
   >
-    <Icon size={24} />
-    <span className="text-[10px] font-bold mt-1 uppercase tracking-wider">{label}</span>
+    <Icon size={28} />
+    <span className="text-[13px] font-bold mt-1 uppercase tracking-wider">{label}</span>
   </Link>
 );
 
@@ -73,7 +73,7 @@ export default function Sidebar() {
       {/* Content with relative positioning to appear above overlay */}
       <div className="relative z-10 flex flex-col items-center gap-2 w-full">
         <div className="flex flex-col gap-2">
-          <NavItem to="/map" icon={Map} label="MAP" active={pathname === '/'} />
+          <NavItem to="/map" icon={Map} label="MAP" active={pathname === '/map'} />
           <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
           <NavItem to="/calendar" icon={Calendar} label="CALENDAR" active={pathname === '/calendar'} />
           <NavItem to="/shop" icon={ShoppingCart} label="SHOP" active={pathname === '/shop'} />
@@ -85,8 +85,8 @@ export default function Sidebar() {
             onClick={handleLogout}
             className="flex flex-col items-center px-4 py-2 rounded-xl transition-colors text-red-500 hover:bg-red-100 w-20"
           >
-            <LogOut size={24} />
-            <span className="text-[10px] font-bold mt-1 uppercase tracking-wider">LOGOUT</span>
+            <LogOut size={28} />
+            <span className="text-[13px] font-bold mt-1 uppercase tracking-wider">LOGOUT</span>
           </button>
         )}
       </div>
