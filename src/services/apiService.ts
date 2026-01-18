@@ -1,7 +1,8 @@
 import { authService } from './authService';
 import type { UserUpdate, User } from '../types/user';
+import { EnvConfig } from '../EnvConfig';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = EnvConfig.VITE_BACKEND_API_URL
 
 async function getAuthHeaders() {
     const token = await authService.getToken();
