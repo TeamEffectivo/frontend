@@ -1,80 +1,97 @@
 {
   "lessons": [
     {
-      "id": "tutorial_set_1",
-      "name": "Learning the Basics",
+      "id": "1",
+      "name": "First Steps: A & C",
       "challenges": [
-        { "id": "t_a", "type": "TUTORIAL", "question": "Mimic the letter 'A'", "answer": "a" },
-        { "id": "t_b", "type": "TUTORIAL", "question": "Mimic the letter 'B'", "answer": "b" },
-        { "id": "t_c", "type": "TUTORIAL", "question": "Mimic the letter 'C'", "answer": "c" },
-        { "id": "t_d", "type": "TUTORIAL", "question": "Mimic the letter 'D'", "answer": "d" },
-        { "id": "t_l", "type": "TUTORIAL", "question": "Mimic the letter 'L'", "answer": "l" },
-        { "id": "t_o", "type": "TUTORIAL", "question": "Mimic the letter 'O'", "answer": "o" },
-        { "id": "t_u", "type": "TUTORIAL", "question": "Mimic the letter 'U'", "answer": "u" },
-        { "id": "t_w", "type": "TUTORIAL", "question": "Mimic the letter 'W'", "answer": "w" },
-        { "id": "t_y", "type": "TUTORIAL", "question": "Mimic the letter 'Y'", "answer": "y" },
-        { "id": "t_good", "type": "TUTORIAL", "question": "Learn the sign for 'GOOD'", "answer": "good" },
-        { "id": "t_quiet", "type": "TUTORIAL", "question": "Learn the sign for 'QUIET'", "answer": "quiet" },
-        { "id": "t_love", "type": "TUTORIAL", "question": "Learn the sign for 'LOVE'", "answer": "love" },
-        { "id": "t_think", "type": "TUTORIAL", "question": "Learn the sign for 'THINK'", "answer": "think" },
-        { "id": "t_ugly", "type": "TUTORIAL", "question": "Learn the sign for 'UGLY'", "answer": "ugly" }
+        { "id": "t1_a", "type": "TUTORIAL", "question": "Learn the letter 'A'", "answer": "a" },
+        { "id": "t1_c", "type": "TUTORIAL", "question": "Learn the letter 'C'", "answer": "c" },
+        { "id": "q1_1", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'A'", "answer": "a" },
+        { "id": "q1_2", "type": "MULTIPLE_CHOICE", "question": "Which letter forms a curved 'C' shape?", "options": ["A", "C", "D", "L"], "answer": "C" }
       ]
     },
     {
-      "id": "tutorial_set_2",
-      "name": "Practice & Recall: Set 1",
+      "id": "2",
+      "name": "The Circle: O",
       "challenges": [
-        { 
-          "id": "q_love_1", 
-          "type": "SIGN_RECOGNITION", 
-          "question": "Show us the sign for 'LOVE' to the camera.", 
-          "answer": "love" 
-        },
-        { 
-          "id": "q_u_w", 
-          "type": "MULTIPLE_CHOICE", 
-          "question": "Which letter is signed with three fingers up forming a 'W' shape?", 
-          "options": ["U", "V", "W", "Y"], 
-          "answer": "W" 
-        },
-        { 
-          "id": "q_quiet_1", 
-          "type": "SIGN_RECOGNITION", 
-          "question": "Can you sign 'QUIET'?", 
-          "answer": "quiet" 
-        },
-        { 
-          "id": "q_abc_1", 
-          "type": "FILL_BLANK", 
-          "question": "Complete the sequence: A, B, _", 
-          "text": "A, B, _",
-          "answer": "C" 
-        },
-        { 
-          "id": "q_y_1", 
-          "type": "SIGN_RECOGNITION", 
-          "question": "Sign the letter 'Y' (The 'Hang Loose' gesture).", 
-          "answer": "y" 
-        },
-        { 
-          "id": "q_good_ugly", 
-          "type": "MULTIPLE_CHOICE", 
-          "question": "This sign involves moving the hand from the chin outwards. What is it?", 
-          "options": ["Good", "Ugly", "Think", "Quiet"], 
-          "answer": "Good" 
-        },
-        { 
-          "id": "q_think_1", 
-          "type": "SIGN_RECOGNITION", 
-          "question": "Sign 'THINK' by pointing to your temple.", 
-          "answer": "think" 
-        },
-        { 
-          "id": "q_l_1", 
-          "type": "SIGN_RECOGNITION", 
-          "question": "Make the 'L' shape with your thumb and index finger.", 
-          "answer": "l" 
-        }
+        { "id": "t2_o", "type": "TUTORIAL", "question": "Learn the letter 'O'", "answer": "o" },
+        { "id": "q2_1", "type": "SIGN_RECOGNITION", "question": "Show us an 'O' shape", "answer": "o" },
+        { "id": "q2_2", "type": "FILL_BLANK", "question": "Finish the word: _ O T", "text": "_ O T", "answer": "D" }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Pointing High: D & L",
+      "challenges": [
+        { "id": "t3_d", "type": "TUTORIAL", "question": "Learn the letter 'D'", "answer": "d" },
+        { "id": "t3_l", "type": "TUTORIAL", "question": "Learn the letter 'L'", "answer": "l" },
+        { "id": "q3_1", "type": "SIGN_RECOGNITION", "question": "Sign the letter 'L'", "answer": "l" },
+        { "id": "q3_2", "type": "MULTIPLE_CHOICE", "question": "Which sign looks like an 'L' shape with thumb and index?", "options": ["L", "D", "O", "A"], "answer": "L" }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Expressing Love",
+      "challenges": [
+        { "id": "t4_love", "type": "TUTORIAL", "question": "Learn the sign for 'LOVE'", "answer": "love" },
+        { "id": "q4_1", "type": "SIGN_RECOGNITION", "question": "Cross your arms to sign...", "answer": "love" },
+        { "id": "q4_2", "type": "MULTIPLE_CHOICE", "question": "What does crossing your fists over your chest mean?", "options": ["Quiet", "Think", "Love", "Good"], "answer": "Love" }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Fingers Up: U & W",
+      "challenges": [
+        { "id": "t5_u", "type": "TUTORIAL", "question": "Learn the letter 'U'", "answer": "u" },
+        { "id": "t5_w", "type": "TUTORIAL", "question": "Learn the letter 'W'", "answer": "w" },
+        { "id": "q5_1", "type": "SIGN_RECOGNITION", "question": "Sign 'W' (3 fingers up)", "answer": "w" },
+        { "id": "q5_2", "type": "SIGN_RECOGNITION", "question": "Sign 'U' (2 fingers together)", "answer": "u" }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Positive Vibes",
+      "challenges": [
+        { "id": "t6_good", "type": "TUTORIAL", "question": "Learn the sign for 'GOOD'", "answer": "good" },
+        { "id": "t6_think", "type": "TUTORIAL", "question": "Learn the sign for 'THINK'", "answer": "think" },
+        { "id": "q6_1", "type": "SIGN_RECOGNITION", "question": "Sign 'GOOD' for the camera", "answer": "good" },
+        { "id": "q6_2", "type": "SIGN_RECOGNITION", "question": "Point to your temple to sign...", "answer": "think" }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "The 'Y' Factor",
+      "challenges": [
+        { "id": "t7_y", "type": "TUTORIAL", "question": "Learn the letter 'Y'", "answer": "y" },
+        { "id": "q7_1", "type": "SIGN_RECOGNITION", "question": "Sign the 'Hang Loose' letter", "answer": "y" },
+        { "id": "q7_2", "type": "MULTIPLE_CHOICE", "question": "Which letter uses the pinky and thumb extended?", "options": ["W", "Y", "L", "U"], "answer": "Y" }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Shhh! Being Quiet",
+      "challenges": [
+        { "id": "t8_quiet", "type": "TUTORIAL", "question": "Learn the sign for 'QUIET'", "answer": "quiet" },
+        { "id": "q8_1", "type": "SIGN_RECOGNITION", "question": "Sign 'QUIET' (finger to lips)", "answer": "quiet" },
+        { "id": "q8_2", "type": "MULTIPLE_CHOICE", "question": "Which sign is used to ask for silence?", "options": ["Good", "Ugly", "Think", "Quiet"], "answer": "Quiet" }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Contrast: Good & Ugly",
+      "challenges": [
+        { "id": "t9_ugly", "type": "TUTORIAL", "question": "Learn the sign for 'UGLY'", "answer": "ugly" },
+        { "id": "q9_1", "type": "SIGN_RECOGNITION", "question": "Sign 'UGLY' (pulling finger across nose)", "answer": "ugly" },
+        { "id": "q9_2", "type": "MULTIPLE_CHOICE", "question": "If 'GOOD' is from the chin out, what is pulling across the nose?", "options": ["Love", "Ugly", "Quiet", "Think"], "answer": "Ugly" }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "The Grand Review",
+      "challenges": [
+        { "id": "q10_1", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'LOVE'", "answer": "love" },
+        { "id": "q10_2", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'A'", "answer": "a" },
+        { "id": "q10_3", "type": "SIGN_RECOGNITION", "question": "Final Test: Sign 'Y'", "answer": "y" }
       ]
     }
   ]
