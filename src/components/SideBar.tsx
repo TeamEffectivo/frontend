@@ -59,7 +59,7 @@ export default function Sidebar() {
 
   return (
     <div 
-      className="flex flex-col items-center gap-2 pt-8 min-h-screen w-24 relative"
+      className="fixed left-0 top-0 bottom-0 flex flex-col items-center gap-2 pt-8 w-24 z-50 border-r border-gray-200/50 shadow-xl"
       style={{ 
         backgroundImage: "url('/background.png')",
         backgroundSize: "cover",
@@ -67,11 +67,11 @@ export default function Sidebar() {
         backgroundRepeat: "no-repeat"
       }}
     >
-      {/* Overlay to make background fainter */}
+      {/* Overlay for blur effect */}
       <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
       
-      {/* Content with relative positioning to appear above overlay */}
-      <div className="relative z-10 flex flex-col items-center gap-2 w-full">
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-between h-full pb-8 w-full">
         <div className="flex flex-col gap-2">
           <NavItem to="/map" icon={Map} label="MAP" active={pathname === '/map'} />
           <NavItem to="/letters" icon={Book} label="LETTERS" active={pathname === '/letters'} />
