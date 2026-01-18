@@ -10,6 +10,8 @@ interface UserState {
   deductBattery: () => void;
   addCoin: (amount: number) => void;
   buyItem: (type: 'freeze' | 'battery', cost: number) => void;
+  incrementStreak: () => void;
+  resetStreak: () => void;
 }
 
 export const useUserStore = create<UserState>()(
@@ -42,6 +44,16 @@ export const useUserStore = create<UserState>()(
             return { coins: state.coins - cost, batteries: state.batteries + 1 };
           return state;
         }),
+
+      incrementStreak: () =>
+        set((state) => ({
+          streak: state.streak + 1,
+        })),
+
+      resetStreak: () =>
+        set(() => ({
+          streak: 0,
+        })),
     }),
     {
       name: 'palmo-user-storage', // unique name for the item in localStorage
