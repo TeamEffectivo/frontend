@@ -1,46 +1,107 @@
 import { Link } from 'react-router-dom';
-// import { useUserStore } from '../../store/useUserStore';
 import curriculumData from '../data/curriculum.json';
 import type { Curriculum } from '../types';
-// import { Flame, BatteryFull, Trophy } from 'lucide-react';
+import Palmo from '../components/Palmo';
+import { useEffect, useRef } from 'react';
 
-// Explicitly cast the imported JSON
 const curriculum = curriculumData as Curriculum;
 
 export default function MapScreen() {
-  // const { streak, batteries, coins } = useUserStore();
+  const activeLessonIndex = curriculum.lessons.findIndex(l => !l.completed);
+  const activeLessonRef = useRef<HTMLDivElement>(null);
 
-  // SAFETY CHECK: If curriculum or lessons is missing, show a loading state
+  useEffect(() => {
+    const scrollToPalmoSlowly = () => {
+      if (!activeLessonRef.current) return;
+
+      const targetY = activeLessonRef.current.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight / 2);
+      const startY = window.pageYOffset;
+      const distance = targetY - startY;
+      const duration = 1500;
+      let start: number | null = null;
+
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        
+        const easing = percentage < 0.6
+          ? 2 * percentage * percentage 
+          : -1 + (4 - 2 * percentage) * percentage;
+
+        window.scrollTo(0, startY + distance * easing);
+
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
+      };
+
+      window.requestAnimationFrame(step);
+    };
+
+    const timer = setTimeout(scrollToPalmoSlowly, 300);
+    return () => {
+      clearTimeout(timer);
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   if (!curriculum || !curriculum.lessons) {
     return (
-      <div className="ml-24 p-10">
-        <p>Loading curriculum or data format is incorrect...</p>
+      <div className="ml-24 p-10 text-white">
+        <p>Loading curriculum...</p>
       </div>
     );
   }
 
   return (
     <div 
-      className="min-h-screen pb-20 bg-[length:100%_auto] bg-repeat-y bg-top"
+      className="min-h-screen pb-40 bg-[length:100%_auto] bg-repeat-y bg-top"
       style={{ backgroundImage: "url('/background.png')" }} 
     >
-      {/* ... Header code remains the same ... */}
-
-      <div className="max-w-2xl mx-auto pt-12 flex flex-col items-center gap-16">
+      <div className="max-w-2xl mx-auto pt-24 flex flex-col items-center gap-20">
         {curriculum.lessons.map((lesson, index) => {
-          const indent = index % 4 === 1 ? 'translate-x-12' : 
-                        index % 4 === 2 ? 'translate-x-24' : 
-                        index % 4 === 3 ? 'translate-x-12' : 'translate-x-0';
+          const indent = index % 4 === 1 ? 'translate-x-32' : 
+                        index % 4 === 2 ? 'translate-x-64' : 
+                        index % 4 === 3 ? 'translate-x-32' : 'translate-x-0';
+                        
+          const isCompleted = lesson.completed;
+          const isActive = index === activeLessonIndex;
+          
+          const isLocked = !isCompleted && !isActive;
 
           return (
-            <div key={lesson.id} className={`relative ${indent}`}>
-              <Link to={`/lesson/${lesson.id}`}>
-                <button className="group relative">
-                  <div className="w-20 h-20 rounded-full bg-blue-500 border-b-8 border-blue-700 group-active:border-b-0 group-active:translate-y-2 flex items-center justify-center text-white text-2xl font-black shadow-lg">
+            <div 
+              key={lesson.id} 
+              ref={isActive ? activeLessonRef : null}
+              className={`relative transition-transform duration-500 ${indent}`}
+            >
+              {/* If locked, we prevent navigation by wrapping in a fragment or div instead of Link */}
+              {isLocked ? (
+                <button disabled className="relative cursor-not-allowed opacity-60">
+                  <div className="w-20 h-20 rounded-full border-b-8 bg-gray-400 border-gray-600 flex items-center justify-center text-gray-200 text-2xl font-black shadow-none">
                     {index + 1}
                   </div>
                 </button>
-              </Link>
+              ) : (
+                <Link to={`/lesson/${lesson.id}`}>
+                  <button className="group relative">
+                    {isActive && (
+                      <div className="absolute -top-24 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+                        <Palmo />
+                      </div>
+                    )}
+                    
+                    <div className={`
+                      w-20 h-20 rounded-full border-b-8 flex items-center justify-center text-white text-2xl font-black shadow-lg
+                      ${isCompleted ? 'bg-blue-500 border-blue-700': 'bg-gray-500 border-gray-700'} 
+                      group-active:border-b-0 group-active:translate-y-2 transition-all
+                    `}>
+                      {index + 1}
+                    </div>
+                  </button>
+                </Link>
+              )}
             </div>
           );
         })}

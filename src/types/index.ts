@@ -13,6 +13,7 @@ export interface Challenge {
 export interface Lesson {
   id: string;
   name: string;
+  completed?: boolean;
   challenges: Challenge[];
 }
 
