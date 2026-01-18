@@ -5,7 +5,7 @@ import curriculumData from '../../data/curriculum.json';
 import { MultipleChoice } from './MultipleChoice';
 import { SignInterpreter } from './SignInterpreter';
 import { FillBlank } from './FillBlank';
-import { X, ChevronRight, AlertCircle, Lightbulb } from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 import type { Curriculum } from '../../types';
 
 const curriculum = curriculumData as unknown as Curriculum;
@@ -14,7 +14,7 @@ export default function Lesson() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
-  const [step, setStep] = useState(0);
+  const [step, _] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
