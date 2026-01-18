@@ -110,8 +110,6 @@ export default function Lesson() {
                 )}
             </div>
         </div>
-
-        <FeedbackArea isCorrect={isCorrect} selectedOption={selectedOption} attempts={attempts} answer={challenge.answer} />
       </div>
     </div>
   );
