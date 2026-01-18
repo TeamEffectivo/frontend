@@ -1,9 +1,11 @@
 import React from 'react';
 import { useUserStore } from '../store/useUserStore';
 import { ChevronLeft, ChevronRight, CheckCircle2, Flame, Snowflake, Info } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CalendarScreen() {
   const { streak, streakFreezes } = useUserStore();
+  const navigate = useNavigate();
   
   // Mocking missed days that were saved by a freeze
   const completedDays = [1, 2, 5, 6, 7, 8]; 
@@ -23,7 +25,9 @@ export default function CalendarScreen() {
             <p className="text-sm text-slate-500">Your streak is protected for {streakFreezes} days.</p>
           </div>
         </div>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-md active:scale-95">
+        <button 
+        onClick={() => navigate('/shop')}
+        className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-md active:scale-95">
           Buy More
         </button>
       </div>
