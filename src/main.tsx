@@ -10,7 +10,7 @@ Amplify.configure({
       userPoolId: 'us-west-2_kAa2O7yWm',
       userPoolClientId: '4rilnuudgm5cvk9e0c9u8iu73r',
       loginWith: {
-        email: true
+        email: true //aaaaa
       }
     }
   }
