@@ -43,7 +43,7 @@ export default function LettersScreen() {
             className="group bg-white border-2 border-slate-200 rounded-3xl p-4 flex flex-col items-center hover:border-blue-400 hover:shadow-xl transition-all cursor-pointer"
           >
             <div className="w-full aspect-square bg-slate-100 rounded-2xl flex items-center justify-center mb-4 overflow-hidden">
-               <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
+              <img src={item.image} alt={item.letter} className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-black text-slate-700">{item.letter}</span>
           </div>
@@ -86,9 +86,6 @@ export default function LettersScreen() {
                 </div>
 
                 <div className="flex gap-2 pt-4">
-                  <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
-                    <Volume2 size={20} /> Pronounce
-                  </button>
                   <button 
                     onClick={() => setSelectedLetter(null)}
                     className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-4 rounded-2xl transition-all"
