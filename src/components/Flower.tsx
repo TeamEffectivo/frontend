@@ -1,4 +1,3 @@
-import React from 'react';
 import './Palmo.css';
 import image1 from '/flower1.png';
 import image2 from '/flower2.png';

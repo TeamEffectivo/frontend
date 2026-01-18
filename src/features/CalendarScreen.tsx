@@ -1,10 +1,9 @@
-import React from 'react';
 import { useUserStore } from '../store/useUserStore';
-import { ChevronLeft, ChevronRight, CheckCircle2, Flame, Snowflake, Info } from 'lucide-react';
+import { Snowflake, Info } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function CalendarScreen() {
-  const { streak, streakFreezes } = useUserStore();
+  const { streakFreezes } = useUserStore();
   const navigate = useNavigate();
   
   // Mocking missed days that were saved by a freeze
