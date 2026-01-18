@@ -32,6 +32,23 @@
   image-rendering: pixelated;
 }
 
+.flower-pixel-container {
+  position: relative;
+  width: 30px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flower-pixel-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+
 /* Base image stays visible slightly past the 50% mark */
 .base-pixel {
   animation: snap-switch-opposite 1s infinite steps(1);
@@ -40,6 +57,16 @@
 /* Top image turns on slightly before the 50% mark */
 .top-pixel {
   animation: snap-switch 1s infinite steps(1);
+}
+
+/* Base image stays visible slightly past the 50% mark */
+.flower-base-pixel {
+  animation: flower-snap-switch-opposite 1s infinite steps(1);
+}
+
+/* Top image turns on slightly before the 50% mark */
+.flower-top-pixel {
+  animation: flower-snap-switch 1s infinite steps(1);
 }
 
 @keyframes snap-switch {
@@ -57,5 +84,25 @@
   }
   51%, 100% { 
     opacity: 0; 
+  }
+}
+
+@keyframes flower-snap-switch {
+  0%, 49% { 
+    opacity: 0; 
+  }
+  49%, 100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes flower-snap-switch-opposite {
+  0%, 50% { 
+    opacity: 1;
+    transform: translateX(-2px);
+  }
+  50.1%, 100% { 
+    opacity: 0; 
+    transform: translateX(-4px);
   }
 }
