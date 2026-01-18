@@ -55,7 +55,7 @@ export default function GameScreen() {
 
   return (
     <div className="fixed inset-0 bg-white z-[100] flex flex-col font-sans overflow-hidden">
-      <Header progress={((step + 1) / lesson.challenges.length) * 100} onExit={() => navigate('/')} />
+      <Header progress={((step + 1) / lesson.challenges.length) * 100} onExit={() => navigate(-1)} />
 
       <div className="flex-1 overflow-y-auto pb-32 flex flex-col items-center p-6">
         <h2 className="text-3xl font-black mb-8 text-center text-slate-800">
