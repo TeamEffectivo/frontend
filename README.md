@@ -2,8 +2,7 @@
 
 🎬 [Watch our hackathon demo on YouTube]
 
-![image]()
-![image](https://github.com/user-attachments/assets/818a25cc-778d-404a-bbc0-bec660cfcef2)
+![image](assets/MapPage.png)
 
 ## Table of Contents
 - [Summary](#summary)
@@ -204,3 +203,8 @@ All API requests include:
 - Elena Jou
 - Irene Cheung
 - Calvin Che
+
+## Gallery
+![image](assets/LettersPage.png)
+![image](assets/CalendarPage.png)
+![image](assets/ShopPage.png)
