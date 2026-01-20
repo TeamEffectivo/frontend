@@ -1,7 +1,9 @@
 # 🐥 Palmo
 
-🎬 Watch our hackathon demo on YouTube
+🎬 [Watch our hackathon demo on YouTube]
 
+![image]()
+![image](https://github.com/user-attachments/assets/818a25cc-778d-404a-bbc0-bec660cfcef2)
 
 ## Table of Contents
 - [Summary](#summary)
@@ -197,7 +199,8 @@ All API requests include:
 ```
 
 ## Contributors
-Daylen Smith
-Elena Jou
-Irene Cheung
-Calvin Che
+
+- Daylen Smith
+- Elena Jou
+- Irene Cheung
+- Calvin Che
